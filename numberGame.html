@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Number-Guessing-Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js.js" defer type="text/javascript"></script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <section>
+        <div class="inner-wrap">
+          <div class="txt-wrap">
+            <h1 class="tit">Number Guessing Game</h1>
+            <p class="desc">
+              We have selected a random number between 1 and 100.<br />
+              See if you can guess it in 10 turns or less.<br />
+              We'll tell you if your guess was too high or too low.
+            </p>
+          </div>
+          <!-- txt-wrap -->
+
+          <div id="game-wrap">
+            <form class="form">
+              <input type="text" class="input" placeholder="Enter a guess" />
+              <button type="submit" class="btn-save">Check</button>
+            </form>
+
+            <div id="result-wrap">
+              <p class="user-answer">
+                <span>입력한 숫자 : </span>
+                <span class="num"></span>
+              </p>
+
+              <div id="correct">
+                <p class="result">고로췌~!!!</p>
+              </div>
+
+              <div id="wrong">
+                <p class="result">응 아니야</p>
+                <p class="status">
+                  <span class="lowhigh"></span>,
+                  <span class="chance"> N번 남았어</span>
+                </p>
+              </div>
+
+              <div id="over">
+                <p class="result">
+                  <strong>GAME OVER!</strong>!<br />
+                  응 그럴 수 있어, 그럴 수 있어
+                </p>
+                <p class="num-right">정답은 N이였지롱~!!</p>
+              </div>
+            </div>
+            <button id="btn-new-game" type="button">한 판 더?!</button>
+          </div>
+          <!-- game-wrap -->
+
+          <p class="game-desc">
+            1. 1과 100사이의 숫자 중 무작위로 추출한다.<br />
+            2. 1부터 플레이어의 차례를 기록한다.<br />
+            3. 플레이어에게 숫자를 맞출 수 있게 한다.<br />
+            4. 숫자를 맞추면 어딘가에 저장하고, 사용자는 이전의 추측한 숫자를 볼
+            수 있도록 한다.<br />
+            5. 그다음, 숫자가 일치한지 확인한다.<br />
+            6. 만약 일치한다면:<br />
+            <span>
+              - 축하 메시지를 표시한다.<br />
+              - 더 이상 숫자를 맞출필요가 없다.<br />
+              - 플레이어가 다시 게임을 할지 묻는다.<br />
+            </span>
+
+            7. 숫자가 틀렸고, 차례가 남아있다면:<br />
+            <span>
+              - 틀렸다고 알린다.<br />
+              - 다른 숫자를 입력할 수 있도록 한다.<br />
+              - 차례가 1 증가한다.<br />
+            </span>
+
+            8. 숫자가 틀렸고, 차례가 없다면:<br />
+            <span>
+              - 게임이 종료되었음을 알린다.<br />
+              - 더 이상 숫자를 맞출필요가 없다.<br />
+              - 플레이어가 다시 게임을 할지 묻는다.<br />
+            </span>
+            9. 게임이 재시작 되면, 게임의 구조와 UI는 완전히 리셋되며, step1
+            부터 다시 로직이 시작된다.
+          </p>
+        </div>
+        <!-- inner-wrap -->
+      </section>
+      <!-- name-wrap -->
+    </div>
+    <!-- wrap -->
+  </body>
+</html>
