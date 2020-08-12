@@ -12,10 +12,10 @@ const numForm = document.querySelector("#game-wrap .form"),
   lowNhigh = document.querySelector("#wrong .lowhigh"),
   chanceNum = document.querySelector("#wrong .chance"),
   answerNum = document.querySelector(".num-right"),
-  btnNewGame = document.getElementById("btn-new-game"),
-  numList = [];
+  btnNewGame = document.getElementById("btn-new-game");
 
 let randomNum = Math.floor(Math.random() * 100) + 1,
+  numList = [],
   userNum = document.querySelector("#result-wrap .user-answer .num"),
   countNum = 1;
 
@@ -30,16 +30,14 @@ function numSubmit(e) {
 }
 
 function inputCheck() {
-  if (parseInt(numInput.value) <= 100) {
+  let userValue = Number(numInput.value);
+  if (parseInt(userValue) <= 100) {
     countDown();
-  } else if (parseInt(numInput.value) > 100) {
+  } else if (parseInt(userValue) > 100) {
     alert("100 이하만 입력 가능합니다.");
     numInput.value = "";
-  } else if (numInput.value === "") {
-    alert("숫자를 입력해주세요.");
-    numInput.value = "";
-  } else {
-    alert("숫자만 입력 가능합니다.");
+  } else if (!userValue) {
+    alert("숫자를(만) 입력해주세요.");
     numInput.value = "";
   }
 }
